@@ -37,6 +37,7 @@ function movimientos() {
                 } else if (esEmpate()) {
                     statusText.textContent = "¡Empate!";
                     drawCount++;
+                    localStorage.setItem("drawCount", drawCount);
                     drawEl.textContent = drawCount;
                     juegoActivo = false;
                 } else {
@@ -62,6 +63,7 @@ function jugadaComputadora() {
     if (verificarGanador("O")) {
         statusText.textContent = "¡Perdiste Intenta de nuevo!";
         lossCount++;
+        localStorage.setItem("lossCount", lossCount);
         lossEl.textContent = lossCount;
         juegoActivo = false;
     } else if (esEmpate()) {
