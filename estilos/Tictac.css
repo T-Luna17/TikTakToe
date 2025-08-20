@@ -1,0 +1,98 @@
+/* === Estilos generales === */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0f0f1a;
+    color: #eaeaea;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #a855f7;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* === Marcador === */
+.scoreboard {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.scoreboard div {
+    background: #1e1e2f;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #6d28d9;
+}
+
+/* === Controles === */
+.controles {
+    margin-bottom: 20px;
+}
+
+select, button {
+    font-size: 1rem;
+    padding: 10px 15px;
+    border: 2px solid #a855f7;
+    border-radius: 8px;
+    background-color: #1e1e2f;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Efecto neon al pasar el mouse */
+select:hover, button:hover {
+    border-color: #f472b6;
+    box-shadow: 0 0 15px #f472b6;
+}
+
+/* Efecto neon al hacer foco */
+select:focus, button:focus {
+    outline: none;
+    box-shadow: 0 0 20px #f472b6;
+}
+
+/* === Tablero === */
+#tablero {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    justify-content: center;
+    margin: 20px auto;
+    
+}
+
+.cell {
+    background-color: #1e1e2f;
+    border: 2px solid #a855f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    color: #000;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.3s;
+    background-image: url("../img/cereal.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+/* Efecto al pasar el mouse */
+.cell:hover {
+    box-shadow: 0 0 15px #a855f7;
+}
+
+/* Texto dinámico */
+#status {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    color: #c084fc;
+}
