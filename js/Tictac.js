@@ -7,9 +7,9 @@ const lossEl = document.getElementById("loss");
 const drawEl = document.getElementById("draw");
 
 let juegoActivo = true; // Control del estado del juego
-let winCount = 0;
-let lossCount = 0;
-let drawCount = 0;
+let winCount = localStorage.getItem("winCount") || 0;
+let lossCount = localStorage.getItem("lossCount") || 0;
+let drawCount = localStorage.getItem("drawCount") || 0;
 
 // Combinaciones ganadoras
 const combinacionesGanadoras = [
@@ -17,6 +17,9 @@ const combinacionesGanadoras = [
     [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columnas
     [0, 4, 8], [2, 4, 6]             // Diagonales
 ];
+winEl.textContent = winCount;
+drawEl.textContent = drawCount;
+lossEl.textContent = lossCount;
 
 // Inicializa eventos
 function movimientos() {
@@ -28,6 +31,7 @@ function movimientos() {
                 if (verificarGanador("X")) {
                     statusText.textContent = "¡Ganaste Felicidades!";
                     winCount++;
+                    localStorage.setItem("winCount", winCount);
                     winEl.textContent = winCount;
                     juegoActivo = false;
                 } else if (esEmpate()) {
